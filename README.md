@@ -11,6 +11,7 @@ The statistical properties of time-based bars are known to be poor. One of the i
    - This method is effective in reducing the amount of data and extracting meaningful information. 
    
 ### Discussion
-- What about sampling dollar bars where the size of the bar is dynamically adjusted as a function of something?
-- Does a ML model that has learned from dollar bars work well with time-based bars that are provided in real time by an exchange API? 
- - 
+1. What about sampling dollar bars where the size of the bar is dynamically adjusted as a function of something?
+2. Does a ML model that has learned from dollar bars work well with time-based bars that are provided in real time by an exchange API? 
+   - 2 trading period ahead in time-based bars is not the same as that in dollar bars. This means that target distribution is different between a  learning phase and trading phase, which will be the cause of devil, the difference of performance between backtest and oos trading. 
+   - For a ML model that has learned from dollar bars to work, what about creating dollar bars in real time and making a trading decision on them? 
